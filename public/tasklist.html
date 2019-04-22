@@ -67,7 +67,7 @@
 					<form ng-submit="insertTask(list._id, $index)">
 						<div class="input-group mb-3">
 							<input type="text" class="form-control-plaintext col-md-10 list-name" ng-model="list.name"
-								ng-change="updateList($parent.$index, $index)" ng-model-options="{debounce: 1000}">
+								ng-change="updateList($index)" ng-model-options="{debounce: 1000}">
 							<input type="text" placeholder="ajouter une tâche" class="form-control col-md-2 desc-task"
 								id="{{'task-content' + $index}}">
 							<div class="input-group-append">

@@ -82,7 +82,7 @@ app.controller("taskController", function($scope, tasksFactory, $http) {
     $scope.updateList = function(index) {
 
       var listtoUpdate = $scope.listSet[index]
-      var contents = document.getElementsByClassName("listcontentModified")
+      var contents = document.getElementsByClassName("list-name")
       listtoUpdate.name = contents[index].value
       console.log(listtoUpdate.name)
       tasksFactory.updateList(listtoUpdate, function(res) {
