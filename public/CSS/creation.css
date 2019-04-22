@@ -49,3 +49,8 @@ body {
   color : #17a2b8;
   font-size: 30px;
 }
+
+.navbar {
+  max-width: 100%;
+  width: 100%;
+}
