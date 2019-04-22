@@ -9,6 +9,6 @@ CTrl + click sur le lien présent dans la console mais changer le port sur l'url 
 Si test sur serveur heroku : 
 https://appliweb-bruna.herokuapp.com/
 
-programmes nécessaires à bon fonctionnement : 
+programmes nécessaires au bon fonctionnement : 
 node js
 Google chrome
