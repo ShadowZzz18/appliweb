@@ -64,14 +64,14 @@
 		<div class="row mep">
 			<ul class="list-group col-md-12" ng-repeat="list in listSet">
 				<li class="list-group-item active">
-					<form ng-submit="insertTask(list._id, $index)">
+					<form>
 						<div class="input-group mb-3">
 							<input type="text" class="form-control-plaintext col-md-10 list-name" ng-model="list.name"
 								ng-change="updateList($index)" ng-model-options="{debounce: 1000}">
 							<input type="text" placeholder="ajouter une tâche" class="form-control col-md-2 desc-task"
 								id="{{'task-content' + $index}}">
 							<div class="input-group-append">
-								<button class="btn btn-success" type="submit"><i
+								<button class="btn btn-success" type="button" ng-click="insertTask(list._id, $index)"><i
 										class="fas fa-plus-square icon-add-task"></i></button>
 								<button class="btn btn-danger" type="button" ng-click="deleteList(list)"><i
 										class="fas fa-trash"></i></button>
