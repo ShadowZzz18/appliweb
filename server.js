@@ -1,6 +1,7 @@
 var dataLayer = require('./models/dataLayer');
 const express = require('express')
-const port = 3000
+const port = process.env.PORT || 8080
+const ip = "0.0.0.0"
 var app = express()
 var morgan = require('morgan')
 var bodyParser = require('body-parser')
@@ -159,4 +160,6 @@ app.get('/creation', function(req, res) {
     res.render("creation.html")
 })
 
-app.listen(port)
+app.listen(port, ip, function() {
+	console.log("listening on " + ip + ":" + port)
+});
