@@ -7,7 +7,6 @@ var morgan = require('morgan')
 var bodyParser = require('body-parser')
 
 
-
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended : true}));
 app.use(morgan('dev'));
