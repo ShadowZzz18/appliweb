@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="fr" ng-app="mainController">
+
+<head>
+	<meta charset="utf-8">
+	<title>ToDo List</title>
+	<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	<script src="./js/Controller.js"></script>
+	<script src="./js/factory.js"></script>
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+		integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+		integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+	<link rel="stylesheet" type="text/css" href="css/tasklist.css">
+
+</head>
+
+<body ng-controller="taskController">
+	<!-- navbar -->
+	<div class="row">
+		<div class="navigation" ng-controller="userController">
+			<nav class="navbar navbar-expand-sm navbar-dark bg-dark">
+				<i class="fas fa-tasks icon-task"></i>
+				<button class="navbar-toggler" type="button" data-toggle="collapse"
+					data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+					aria-label="Toggle navigation">
+					<span class="navbar-toggler-icon"></span>
+				</button>
+
+				<div class="collapse navbar-collapse" id="navbarSupportedContent">
+					<ul class="navbar-nav mr-auto">
+						<li class="nav-item active">
+							<span class="taches-perso">tâches personnelles</span>
+						</li>
+					</ul>
+					<form class="form-inline my-2 my-lg-0" ng-hide="account == null || account == 'null'">
+						<button class="btn btn-info my-2 mr-sm-2" type="button"
+							onclick="location.href='/tasklist'">{{account}}</button>
+						<a class="btn btn-outline-info my-2 my-sm-0 bouton-deconnexion" role="button"
+							ng-click="disconnection()" href="/">Se
+							déconnecter</a>
+					</form>
+				</div>
+			</nav>
+		</div>
+	</div>
+	<!-- ajouter liste -->
+	<div class="container-fluid">
+		<div class="row add-list-content">
+			<div class="container">
+				<div class="input-group add-list">
+					<input type="text" id="task-search" class="form-control" placeholder="Ajouter une liste"
+						ng-model="listname">
+					<div class="input-group-append">
+						<button type="button" class=" btn btn-primary btn-rounded btn-sm my-0"
+							ng-click="insertList()">Ajouter</button>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<!-- liste taches -->
+		<div class="row mep">
+			<ul class="list-group col-md-12" ng-repeat="list in listSet">
+				<li class="list-group-item active">
+					<form ng-submit="insertTask(list._id, $index)">
+						<div class="input-group mb-3">
+							<input type="text" class="form-control-plaintext col-md-10 list-name" ng-model="list.name"
+								ng-change="updateTask($parent.$index, $index)" ng-model-options="{debounce: 1000}">
+							<input type="text" placeholder="ajouter une tâche" class="form-control col-md-2 desc-task"
+								id="{{'task-content' + $index}}">
+							<div class="input-group-append">
+								<button class="btn btn-success" type="submit"><i
+										class="fas fa-plus-square icon-add-task"></i></button>
+								<button class="btn btn-danger" type="button" ng-click="deleteList(list)"><i
+										class="fas fa-trash"></i></button>
+							</div>
+						</div>
+					</form>
+				</li>
+				<li class="list-group-item" ng-repeat="task in tasklists[$index]">
+					<div class="input-group mb-3">
+						<div class="input-group-prepend">
+							<div class="input-group-text">
+								<input type="checkbox" ng-model="task.done"
+									ng-change="updateTask($parent.$index, $index)" class="checkmark">
+							</div>
+						</div>
+						<input type="text" class="form-control form-control-plaintext" ng-model="task.content"
+							ng-change="updateTask($parent.$index, $index)" ng-model-options="{debounce: 1000}">
+						<div class="input-group-append">
+							<button class="btn btn-danger" type="button" ng-click="deleteTask(task._id)"><i
+									class="fas fa-trash"></i></button>
+						</div>
+					</div>
+				</li>
+				<hr>
+			</ul>
+		</div>
+	</div>
+</body>
+
+</html>

@@ -1,0 +1,63 @@
+@font-face {
+  font-family: "Ubuntu";
+  src: url("../font/Ubuntu-R.ttf");
+}
+
+body {
+  font-family: "Ubuntu", serif;
+}
+
+.addtask {
+  max-width: 30%;
+  padding-bottom: 10px;
+}
+
+.navigation {
+  display: block;
+  margin: auto;
+  max-width: 100%;
+  width: 100%;
+}
+
+.bouton-deconnexion {
+  margin-right: 10px;
+}
+
+
+.icon-add-task {
+  color : white;
+}
+
+.add-list {
+  margin: auto;
+}
+
+.add-list-content {
+  padding-top: 40px;
+  padding-bottom: 40px;
+  max-width: 100%;
+  width: 100%;
+}
+
+.list-name {
+  font-weight: bold;
+  color : white;
+  font-size: 15pt;
+}
+
+.desc-task {
+  font-size: 15pt;
+}
+
+.icon-task {
+  color : #17a2b8;
+  font-size: 30px;
+  margin-left: 10px;
+}
+
+.taches-perso {
+  font-weight: bold;
+  color : white;
+  font-size: 15pt;
+  margin-left: 20px;
+}

@@ -1,0 +1,22 @@
+{
+  "name": "appli_web",
+  "version": "1.0.0",
+  "description": "Je suis Arnaud et je pue la merde",
+  "main": "server.js",
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "ejs": "^2.6.1",
+    "express": "^4.16.4",
+    "mongoose": "^5.5.2",
+    "morgan": "^1.9.1",
+    "bootstrap": "^4.3.1",
+    "uuidv4": "^4.0.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "author": "",
+  "license": "ISC"
+}

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" ng-app="mainController">
+
+<head>
+  <meta charset="utf-8">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+    integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.0.8/angular.min.js"></script>
+  <script src="./js/Controller.js"></script>
+  <script src="./js/factory.js"></script>
+  <link rel="stylesheet" type="text/css" href="css/creation.css">
+  <title>Connexion à un compte</title>
+</head>
+
+<body ng-controller="userController">
+  <div class="row navigation">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+      <i class="fas fa-home icon-home"></i>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item active">
+          </li>
+        </ul>
+        <form class="form-inline my-2 my-lg-0">
+          <a class="btn btn-outline-info mr-sm-2" href="/creation" role="button">Créer un compte</a>
+        </form>
+      </div>
+    </nav>
+  </div>
+  <div class="container">
+    <div class="container encadrure">
+      <div class="row titre">
+        <h1>Connexion à un compte</h1>
+      </div>
+      <div class="row formulaire">
+        <form ng-submit="connection()">
+          <div class="form-group">
+            <input type="text" class="form-control" placeholder="Identifiant" ng-model="username" required>
+          </div>
+          <div class="form-group">
+            <input type="password" class="form-control" placeholder="Mot de passe" ng-model="password" required>
+          </div>
+          <button type="submit" class="btn btn-primary bouton-valider">Valider</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>
