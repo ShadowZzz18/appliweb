@@ -31,7 +31,7 @@
 				<div class="collapse navbar-collapse" id="navbarSupportedContent">
 					<ul class="navbar-nav mr-auto">
 						<li class="nav-item active">
-							<span class="taches-perso">tâches personnelles</span>
+							<span class="taches-perso">Tâches personnelles</span>
 						</li>
 					</ul>
 					<form class="form-inline my-2 my-lg-0" ng-hide="account == null || account == 'null'">
@@ -67,7 +67,7 @@
 					<form ng-submit="insertTask(list._id, $index)">
 						<div class="input-group mb-3">
 							<input type="text" class="form-control-plaintext col-md-10 list-name" ng-model="list.name"
-								ng-change="updateTask($parent.$index, $index)" ng-model-options="{debounce: 1000}">
+								ng-change="updateList($parent.$index, $index)" ng-model-options="{debounce: 1000}">
 							<input type="text" placeholder="ajouter une tâche" class="form-control col-md-2 desc-task"
 								id="{{'task-content' + $index}}">
 							<div class="input-group-append">
